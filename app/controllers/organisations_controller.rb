@@ -1,6 +1,6 @@
 class OrganisationsController < ApplicationController
 before_action :authenticate_user!
-before_action :find_organisation, :only[:show, :update, :destroy]
+before_action :find_organisation, only: [:show, :update, :destroy]
   def index
     @organisations= Organisation.all
     render json: @organisations
